@@ -1,4 +1,4 @@
-class WalkscoreService
+class ScoreService
 
   def scores(lat, long)
     response = conn.get("/score?format=json&lat=#{lat}&lon=#{long}&transit=1&bike=1&wsapikey=95d08de9ee57b7909acaec121a6633fb")
