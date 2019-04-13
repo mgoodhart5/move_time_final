@@ -1,12 +1,8 @@
 class LocationInfoFacade
-  attr_reader :location,
-              :population,
-              :income
+  attr_reader :location
 
   def initialize(location)
     @location = location
-    @population = population
-    @income = income
   end
 
   def population
@@ -16,12 +12,28 @@ class LocationInfoFacade
 
   def income
     ods = ODSService.new(@location)
-    ods.income_info[:fields][:"2015"]
+    @_income || ods.income_info[:fields][:"2015"]
   end
 
   def walkscore
-    geo_service = GeoService.new(@location)
-    walkscore_service = WalkscoreService.new
-    walkscore_service.scores(geo_service.latitude, geo_service.longitude)[:walkscore]
+    @_walkscore || score_service[:walkscore] || "unavailable for this city"
   end
+
+  def bikescore
+    @_bikescore || score_service[:transit][:score] || "unavailable for this city"
+  end
+
+  def transitscore
+    @_transitscore || score_service[:bike][:score] || "unavailable for this city"
+  end
+
+  def geo_service
+    GeoService.new(@location)
+  end
+
+  def score_service
+    ss = ScoreService.new
+    ss.scores(geo_service.latitude, geo_service.longitude)
+  end
+
 end
