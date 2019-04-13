@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <div class="search-form">
+      <%= form_tag :search, method: :get, id: "searching" do %>
+        <form>
+          <%= text_field_tag :city_state, nil, placeholder: "City, State" %>
+          <%= submit_tag "Search" %>
+        </form>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

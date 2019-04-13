@@ -5,6 +5,6 @@ describe 'when a user visits "/" ' do
     visit '/'
 
     expect(page).to have_css("input#city_state")
-    expect(page).to have_button("Submit")
+    expect(page).to have_button("Search")
   end
 end
