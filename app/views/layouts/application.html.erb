@@ -16,10 +16,10 @@
     </nav>
     <div>
       <%= form_tag :search, method: :get, id: "searching" do %>
-        <form class="seach-form">
-          <%= text_field_tag :city_state, nil, placeholder: "City, State" %>
+        <div class="seach-form">
+          <%= text_field_tag :location, nil, placeholder: "City, State" %>
           <%= submit_tag "Search", id: "search-btn" %>
-        </form>
+        </div>
       <% end %>
     </div>
     <%= yield %>
