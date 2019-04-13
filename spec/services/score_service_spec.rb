@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-describe WalkscoreService do
+describe ScoreService do
   it 'exists' do
-    wss = WalkscoreService.new
+    wss = ScoreService.new
 
-    expect(wss).to be_a(WalkscoreService)
+    expect(wss).to be_a(ScoreService)
   end
   it 'returns the walk, bike, transit scores' do
     location = "Denver, CO"
     geo_s = GeoService.new(location)
-    wss = WalkscoreService.new
+    wss = ScoreService.new
     results = wss.scores(geo_s.latitude, geo_s.longitude)
 
     expect(results).to be_a(Hash)
