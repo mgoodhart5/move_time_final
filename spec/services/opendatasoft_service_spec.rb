@@ -20,4 +20,10 @@ describe ODSService do
     expect(ods.population_info).to be_a(Hash)
     expect(ods.population_info[:fields]).to have_key(:population)
   end
+  it 'returns per-capita-income of a particular city' do
+    ods = ODSService.new(@location)
+
+    expect(ods.income_info).to be_a(Hash)
+    expect(ods.income_info[:fields]).to have_key(:"2015")
+  end
 end
