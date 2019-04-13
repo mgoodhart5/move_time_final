@@ -9,7 +9,11 @@ describe ODSService do
   it 'returns data for something' do
     ods = ODSService.new
 
-    binding.pry
+    expect(ods.returned_info).to be_a(Hash)
+  end
+  it 'returns data for population of a particular city' do
+    ods = ODSService.new
+
     expect(ods.returned_info).to be_a(Hash)
   end
 end
