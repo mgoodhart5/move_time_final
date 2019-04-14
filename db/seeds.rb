@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Favorite.destroy_all
+UserFavorite.destroy_all
+
+user = User.create(name: "Mary")
+favorite = Favorite.create(location_name: "Miami, FL")
+
+UserFavorite.create(user_id: user.id, favorite_id: favorite.id)
