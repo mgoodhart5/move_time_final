@@ -24,17 +24,17 @@
 }
 
 body {
-  background-color: #2E0219;
+  background-color: #A7C4C2;
   text-align: center;
 }
 
 nav {
   text-align: center;
-  color: #A7C4C2;
+  color: #6A0F49;
 }
 ul {
   text-align: center;
-  color: #A7C4C2;
+  color: #4A001F;
 }
 li {
   font-size: 25px;
@@ -43,13 +43,13 @@ li {
   color: #6A0F49;
 }
 h1 {
-  font-size: 50px;
+  font-size: 75px;
 }
 input {
   padding: 20px;
 }
 strong {
-  color: #A7C4C2;
+  color: #6A0F49;
 }
 #image {
   align-content: center;
@@ -64,7 +64,8 @@ strong {
   background-color: #4A001F;
 }
 .btn:hover {
-  background-color: #97EFE9;
+  background-color: #6A0F49;
+  color: #A7C4C2;
 }
 .searching-text {
   text-align: center;
