@@ -20,11 +20,7 @@ class LocationInfoFacade
   end
 
   def bikescore
-    @_bikescore || score_service[:transit][:score] || "unavailable for this city"
-  end
-
-  def transitscore
-    @_transitscore || score_service[:bike][:score] || "unavailable for this city"
+    @_bikescore || score_service[:bike][:score] || "unavailable for this city"
   end
 
   def geo_service
