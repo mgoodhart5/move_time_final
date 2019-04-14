@@ -19,10 +19,10 @@ describe 'when a user visits "/" ' do
     expect(current_path).to eq(search_path)
 
     within "#all-info" do
-      expect(page).to have_content("The population of #{city_state} is #{population}.")
-      expect(page).to have_content("The per-capita-income of #{city_state} is #{income}.")
-      expect(page).to have_content("The walk score for #{city_state} is #{walkscore}.")
-      expect(page).to have_content("The bike score for #{city_state} is #{bikescore}.")
+      expect(page).to have_content("The population is #{population}.")
+      expect(page).to have_content("The per-capita-income is #{income}.")
+      expect(page).to have_content("The walk score is #{walkscore}.")
+      expect(page).to have_content("The bike score is #{bikescore}.")
     end
   end
 end
