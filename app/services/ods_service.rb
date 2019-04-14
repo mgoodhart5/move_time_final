@@ -13,6 +13,11 @@ class ODSService
     JSON.parse(response.body, symbolize_names: true)[:records][0]
   end
 
+  def demographics_info
+    response = conn.get("/api/records/1.0/search/?dataset=us-cities-demographics&q=#{@location}&facet=city&facet=state")
+    JSON.parse(response.body, symbolize_names: true)[:records][0][:fields]
+  end
+
   def conn
     Faraday.new("https://public.opendatasoft.com") do |f|
       f.adapter Faraday.default_adapter
