@@ -7,12 +7,11 @@ class LocationInfoFacade
 
   def population
     ods = ODSService.new(@location)
-    ods.population_info[:fields][:population]
+    @_population || ods.population_info[:fields][:population]
   end
 
   def income
-    ods = ODSService.new(@location)
-    @_income || ods.income_info[:fields][:"2015"]
+    @_income || ods_service.income_info[:fields][:"2015"]
   end
 
   def walkscore
@@ -21,6 +20,22 @@ class LocationInfoFacade
 
   def bikescore
     @_bikescore || score_service[:bike][:score] || "unavailable for this city"
+  end
+
+  def veterans
+    @_veterans || ods_service.demographics_info[:number_of_veterans]
+  end
+
+  def median_age
+    @_median_age || ods_service.demographics_info[:median_age]
+  end
+
+  def household_size
+    @_household_size || ods_service.demographics_info[:average_household_size]
+  end
+
+  def ods_service
+    ODSService.new(@location)
   end
 
   def geo_service

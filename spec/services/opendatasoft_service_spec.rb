@@ -26,4 +26,12 @@ describe ODSService do
     expect(ods.income_info).to be_a(Hash)
     expect(ods.income_info[:fields]).to have_key(:"2015")
   end
+  it 'returns the demographics of a particular city' do
+    ods = ODSService.new(@location)
+
+    expect(ods.demographics_info).to be_a(Hash)
+    expect(ods.demographics_info).to have_key(:number_of_veterans)
+    expect(ods.demographics_info).to have_key(:median_age)
+    expect(ods.demographics_info).to have_key(:average_household_size)
+  end
 end
