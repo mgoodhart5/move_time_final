@@ -14,7 +14,6 @@ describe 'when a user visits "/" ' do
     income = 48435
     walkscore = 93
     bikescore = 94
-    transitscore = "unavailable for this city"
     fill_in :location, with: city_state
     click_button "Search"
     expect(current_path).to eq(search_path)
@@ -23,8 +22,7 @@ describe 'when a user visits "/" ' do
       expect(page).to have_content("The population of #{city_state} is #{population}.")
       expect(page).to have_content("The per-capita-income of #{city_state} is #{income}.")
       expect(page).to have_content("The walk score for #{city_state} is #{walkscore}.")
-      expect(page).to have_content("The bike score for #{city_state} is #{transitscore}.")
-      expect(page).to have_content("The transit score for #{city_state} is #{bikescore}.")
+      expect(page).to have_content("The bike score for #{city_state} is #{bikescore}.")
     end
   end
 end
