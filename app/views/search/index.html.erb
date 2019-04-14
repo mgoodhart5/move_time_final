@@ -1,6 +1,7 @@
 <div id="city-name">
   <h2><%= @location_info.location %></h2>
-  <button type="submit" class="btn" id="favorite-btn">Add to your favorites!!</button>
+  <p>Quote of the Day: <%= @location_info.quote[:quote] %> By: <%= @location_info.quote[:author] %></p>
+  <!-- <button type="submit" class="btn" id="favorite-btn">Add to your favorites!!</button> -->
 </div>
 <ul id="all-info">
   <li>The population is <strong><%= @location_info.population %></strong>.</li>
