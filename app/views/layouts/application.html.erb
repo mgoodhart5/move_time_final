@@ -16,10 +16,8 @@
     </nav>
     <div>
       <%= form_tag :search, method: :get, id: "searching" do %>
-        <div class="seach-form">
-          <%= text_field_tag :location, nil, placeholder: "City, State" %>
-          <%= submit_tag "Search", id: "search-btn" %>
-        </div>
+        <%= text_field_tag :location, nil, placeholder: "City, State", class: "searching-text", :required => true %>
+        <%= submit_tag "Search", class: "btn btn-default btn-lg" %>
       <% end %>
     </div>
     <%= yield %>

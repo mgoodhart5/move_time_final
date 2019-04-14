@@ -1,3 +1,5 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,24 +15,64 @@
  *= require_tree .
  *= require_self
  */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #48435C;
+  background-color: #2E0219;
 }
 
 nav {
   text-align: center;
-  color: #EDFFEC;
+  color: #A7C4C2;
 }
-
-/* #search-btn {
-  padding: 20px;
-  font-size: 20px;
-} */
+ul {
+  text-align: center;
+  color: #A7C4C2;
+}
+li {
+  font-size: 25px;
+  padding: 10px;
+  margin: 5px;
+  color: #6A0F49;
+}
+h1 {
+  font-size: 50px;
+}
 input {
+  padding: 20px;
+}
+strong {
+  color: #A7C4C2;
+}
+.btn {
+  text-align: center;
   padding: 20px;
   font-size: 20px;
   margin: 20px;
+  color: #A7C4C2;
+  border-radius: 20px;
+  background-color: #4A001F;
+}
+.btn:hover {
+  background-color: #97EFE9;
+}
+.searching-text {
+  text-align: center;
+  padding: 14px;
+  font-size: 30px;
+  margin: 20px;
+  border-radius: 20px;
+  color: #A7C4C2;
+  background-color: #4A001F;
 }
 #searching {
   text-align: center;
+  padding: 12px;
+  font-size: 30px;
 }
