@@ -1,6 +1,7 @@
 <div id="city-name">
   <h2><%= @location_info.location %></h2><br>
   <%= button_to "Add to your favorites, #{@user.name}!!", favorite_path({id: @user.id, location: @location_info.location}), class: "btn" %>
+  <%= button_to "My Favorites", favorites_path, method: :get, class: "btn" %>
   <u><a href="https://www.nerdwallet.com/cost-of-living-calculator">Cost of Living Calculator</a></u>
 </div>
 <ul id="all-info">

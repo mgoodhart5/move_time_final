@@ -6,4 +6,8 @@ class FavoritesController < ApplicationController
     end
     redirect_to root_path
   end
+
+  def index
+    @favorites = Favorite.all
+  end
 end
