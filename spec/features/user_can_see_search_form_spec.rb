@@ -44,7 +44,6 @@ describe 'when a user visits "/" ' do
   end
   it "sees their user name on the button to add to favorites" do
     @user = User.create(name: "May Kasahara")
-    @favorite = Favorite.create(location_name: "Denver, CO", user: @user)
     visit '/'
     city_state = "Denver, Co"
     fill_in :location, with: city_state
@@ -53,7 +52,6 @@ describe 'when a user visits "/" ' do
 
     expect(page).to have_link("Cost of Living Calculator")
     click_button("Add to your favorites, #{@user.name}")
-    expect(current_path).to eq(search_path)
-    expect(user.favorites.count).to eq(1)
+    expect(@user.favorites.count).to eq(1)
   end
 end
