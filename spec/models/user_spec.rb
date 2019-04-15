@@ -5,6 +5,6 @@ describe User do
     it { should validate_presence_of(:name) }
   end
   describe 'Relationships' do
-    it { should have_many(:favorites).through(:user_favorites)}
+    it { should have_many(:favorites)}
   end
 end
