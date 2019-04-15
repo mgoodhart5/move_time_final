@@ -25,15 +25,4 @@ describe 'when a user visits "/" ' do
       expect(page).to have_content("The bike score is #{bikescore}.")
     end
   end
-  it "sees a button next to the city name to add to favorites" do
-    visit '/'
-    city_state = "Denver, Co"
-    fill_in :location, with: city_state
-    click_button "Search"
-    expect(current_path).to eq(search_path)
-
-    within "#city-name" do
-      expect(page).to have_button("Add to your favorites!!")
-    end
-  end
 end

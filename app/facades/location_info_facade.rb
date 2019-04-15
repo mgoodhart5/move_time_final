@@ -34,12 +34,20 @@ class LocationInfoFacade
     @_household_size || ods_service.demographics_info[:average_household_size]
   end
 
+  def quote
+    @_quote || qod_service.quote
+  end
+
   def ods_service
     ODSService.new(@location)
   end
 
   def geo_service
     GeoService.new(@location)
+  end
+
+  def qod_service
+    QODService.new
   end
 
   def score_service
