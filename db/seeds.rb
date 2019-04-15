@@ -9,5 +9,5 @@ User.destroy_all
 Favorite.destroy_all
 
 
-user = User.create(name: "Mary")
+user = User.create(name: "May Kasahara")
 Favorite.create(location_name: "Miami, FL", user_id: user.id)

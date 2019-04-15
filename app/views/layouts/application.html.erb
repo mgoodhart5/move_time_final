@@ -20,6 +20,11 @@
         <%= submit_tag "Search", class: "btn btn-default btn-lg" %>
       <% end %>
     </div>
+    <div id="flashes">
+      <% flash.each do |type, message| %>
+      <%= content_tag :div, message, class: type %>
+      <% end %>
+    </div>
     <%= yield %>
     <img src="https://imgs.xkcd.com/comics/api.png" alt="xkcd comic" id="image">
   </body>
