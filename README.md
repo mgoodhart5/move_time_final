@@ -1,24 +1,50 @@
-# README
+# Move Time
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small Rails project- see information for the next major city you'd like to live in! Move time is deployed on Heroku [here](https://move-time-55.herokuapp.com/).
 
-Things you may want to cover:
+###### Created by:
 
-* Ruby version
+* Mary Goodhart: https://github.com/mgoodhart5
 
-* System dependencies
+## Getting Started && Prerequisites
 
-* Configuration
+```
+git clone git@github.com:mgoodhart5/move_time_final.git
+```
 
-* Database creation
+From your terminal, navigate into the move_time directory:
 
-* Database initialization
+```
+cd move_time
+```
+```
+bundle
+```
+```
+rake db:{create,migrate,seed}
+```
 
-* How to run the test suite
+Start your server:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rails s
+```
 
-* Deployment instructions
+Open your browser (best functionality in Chrome).
 
-* ...
+Navigate to `http://localhost:3000/` to run the application.
+
+Welcome to the dev environment!
+
+## Current Known Issues
+
+* You cannot delete a favorite.
+* This only functions for major cities, per the API provided.
+
+## Tech Stack
+
+* Ruby
+* Rails
+* Postgres
+* HTML
+* CSS
